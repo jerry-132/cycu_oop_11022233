@@ -19,7 +19,7 @@ def fetch_bus_stops(route_id):
         print("網頁載入完成")
         
         # 選取所有站點的 HTML 節點
-        stop_elements = page.query_selector_all("li .auto-list-stationlist")
+        stop_elements = page.query_selector_all("li .auto-list-stationlist")   
         print(f"找到的站點數量：{len(stop_elements)}")  # 除錯輸出
         result = []
         for stop in stop_elements:
