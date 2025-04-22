@@ -24,8 +24,8 @@ def fetch_bus_stops(route_id):
         result = []
         for stop in stop_elements:
             try:
-                # 提取站名、進站時間、車站序號、車站編號、經緯度
-                arrival_time_element = stop.query_selector(".auto-list-stationlist-position-time")
+                # 提取站名、進站時間、車站序號、車站名稱、車站編號、經緯度
+                arrival_time_element = stop.query_selector(".auto-list-stationlist-position-time, .auto-list-stationlist-position-now, .auto-list-stationlist-position-none")
                 stop_number_element = stop.query_selector(".auto-list-stationlist-number")
                 stop_name_element = stop.query_selector(".auto-list-stationlist-place")
                 stop_id_element = stop.query_selector("input#item_UniStopId")
@@ -39,16 +39,19 @@ def fetch_bus_stops(route_id):
                 
                 # 提取資料
                 arrival_time = arrival_time_element.inner_text().strip()
-                print(f"提取的到達時間：{arrival_time}")  # 除錯輸出
                 stop_number = stop_number_element.inner_text().strip()
                 stop_name = stop_name_element.inner_text().strip()
                 stop_id = stop_id_element.get_attribute("value")
                 latitude = latitude_element.get_attribute("value")
                 longitude = longitude_element.get_attribute("value")
                 
-                # 如果到達時間為空或顯示為進站中，記錄為「進站中」
-                if not arrival_time or arrival_time.strip() == "" or "進站中" in arrival_time:
+                # 如果到達時間為空、進站中或尚未發車，記錄為相應的狀態
+                if not arrival_time or arrival_time.strip() == "":
+                    arrival_time = "未知"
+                elif "進站中" in arrival_time:
                     arrival_time = "進站中"
+                elif "尚未發車" in arrival_time:
+                    arrival_time = "尚未發車"
                 
                 # 將資料加入結果列表
                 result.append((arrival_time, stop_number, stop_name, stop_id, latitude, longitude))
@@ -67,6 +70,8 @@ def save_to_csv(data, filename):
     """
     with open(filename, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
+        # 寫入標題行
+        writer.writerow(["到達時間", "車站序號", "車站名稱", "車站編號", "緯度", "經度"])
         # 寫入資料
         writer.writerows(data)
 
