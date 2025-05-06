@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cycu11022233"
+version = "2025.05.06"
+description = "A short description of the cycu11022233 package"
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [
+    { name="jerry", email="a30453332@gmail.com" }
+]
+license = { text = "MIT" }
+dependencies = [
+    "certifi==2025.4.26",
+    "contourpy==1.3.2",
+    "cycler==0.12.1",
+    "fonttools==4.57.0",
+    "geopandas==1.0.1",
+    "kiwisolver==1.4.8",
+    "matplotlib==3.10.1",
+    "numpy==2.2.5",
+    "packaging==25.0",
+    "pandas==2.2.3",
+    "pillow==11.2.1",
+    "pyogrio==0.10.0",
+    "pyparsing==3.2.3",
+    "pyproj==3.7.1",
+    "python-dateutil==2.9.0.post0",
+    "pytz==2025.2",
+    "RapidFuzz==3.13.0",
+    "shapely==2.1.0",
+    "six==1.17.0",
+    "tzdata==2025.2"
+]
+
+[project.urls]
+"Homepage" = "https://your-homepage-url.com"
+"Source" = "https://github.com/your-username/your-repo"

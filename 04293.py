@@ -13,11 +13,11 @@ rcParams['axes.unicode_minus'] = False  # 解決負號顯示問題
 # Main program
 if __name__ == "__main__":
     # CSV 檔案名稱
-    csv_file = r"C:\Users\User\Documents\cycu_oop_11022233\0161000900.csv"  # CSV 檔案路徑
+    csv_file = r"C:\Users\User\Documents\GitHub\cycu_oop_11022233\0161000900.csv"  # CSV 檔案路徑
     geojson_file = "bus_stop2.geojson"  # GeoJSON 檔案名稱
-    icon_path_red = r"C:\Users\User\Documents\cycu_oop_11022233\pink_circle_transparent.png"  # 紅色圖示
-    icon_path_bus = r"C:\Users\User\Documents\cycu_oop_11022233\ChatGPT Image 2025年4月29日 下午07_23_27.png"  # 公車圖示
-    icon_path_person = r"C:\Users\User\Documents\cycu_oop_11022233\ChatGPT Image 2025年4月29日 下午06_39_19.png"  # 小人圖示
+    icon_path_red = r"C:\Users\User\Documents\GitHub\cycu_oop_11022233\pink_circle_transparent.png"  # 紅色圖示
+    icon_path_bus = r"C:\Users\User\Documents\GitHub\cycu_oop_11022233\ChatGPT Image 2025年4月29日 下午07_23_27.png"  # 公車圖示
+    icon_path_person = r"C:\Users\User\Documents\GitHub\cycu_oop_11022233\ChatGPT Image 2025年4月29日 下午06_39_19.png"  # 小人圖示
 
     # 檢查圖示檔案是否存在
     for path in [icon_path_red, icon_path_bus, icon_path_person]:
