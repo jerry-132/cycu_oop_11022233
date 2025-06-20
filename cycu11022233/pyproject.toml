@@ -1,0 +1,22 @@
+[project]
+name = "bus_query_11022233"
+version = "1.0.0"
+description = "台北市公車查詢系統"
+authors = [
+    { name="張翔禎土木四乙", email="a30453332@gmail.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.7"
+dependencies = [
+    "playwright",
+    "selenium",
+    "folium",
+    "greenlet",
+    "pyee",
+    "typing_extensions"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
