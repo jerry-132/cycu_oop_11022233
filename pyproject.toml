@@ -1,22 +1,27 @@
-[project]
-name = "bus_query_11022233"
-version = "1.0.0"
-description = "台北市公車查詢系統"
-authors = [
-    { name="張翔禎土木四乙", email="a30453332@gmail.com" }
-]
-readme = "README.md"
-license = { text = "MIT" }
-requires-python = ">=3.7"
-dependencies = [
-    "playwright",
-    "selenium",
-    "folium",
-    "greenlet",
-    "pyee",
-    "typing_extensions"
-]
-
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "cycu11022233"
+version = "2025.05.06"
+description = "A short description of the cycu25305 package"
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [
+    { name="張翔禎土木四乙11022233", email="a30453332@gmail.com" }
+]
+license = "MIT"
+dependencies = [
+    # ...你的所有依賴...
+]
+
+[tool.setuptools]
+packages = ["cycu11022233"]
+
+[tool.setuptools.packages.find]
+include = ["cycu11022233"]
+
+[project.urls]
+Homepage = "https://your-homepage-url.com"
+Source = "https://github.com/your-username/your-repo"
